@@ -1,7 +1,9 @@
-export default function Title(){
+export default function Title(props){
+    
     return (
         <>
-            <div class="titulo">Primeiro, seu prato</div>
+            
+            <div class="titulo">{props.tituloSecao}</div>
         </>
     );
 }

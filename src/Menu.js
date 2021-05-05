@@ -1,81 +1,29 @@
 import Secao from "./ComponentsMenu/Secao";
-export default function Menu(){
+export default function Menu(){   
+    const porSecoes = [
+        {titulo: "Primeiro, seu prato", 
+        itemSession:[{ imagem:"img/frango_yin_yang.png", item:"Frango Yin Yang", descricao:"Um pouco de batata, um pouco de salada", preco:"16,90"},
+                      { imagem:"img/frango_yin_yang.png", item:"Carne Yin Yang", descricao:"Um pouco de batata, um pouco de salada", preco:"14,90"},
+                      { imagem:"img/frango_yin_yang.png", item:"Peixe Yin Yang", descricao:"Um pouco de batata, um pouco de salada", preco:"17,90"}   
+                    ]       
+        },
+        {titulo: "Agora, sua bebida", 
+        itemSession:[{ imagem:"img/coquinha_gelada.png", item:"Coquinha gelada", descricao:"Lata 350ml", preco:"6,90"},
+                     { imagem:"img/coquinha_gelada.png", item:"Guarana gelado", descricao:"Lata 350ml", preco:"4,90"},
+                     { imagem:"img/coquinha_gelada.png", item:"Suquinho gelado", descricao:"Garrafa 450ml", preco:"7,90"}   
+                    ]
+        },
+        {titulo: "Por fim, sua sobremesa", 
+        itemSession:[{ imagem:"img/pudim.png", item:"Pudim", descricao:"Apenas um pudim", preco:"6,90"},
+                     { imagem:"img/pudim.png", item:"Mousse", descricao:"Apenas uma mousse", preco:"4,90"},
+                     { imagem:"img/pudim.png", item:"Brownie", descricao:"Apenas um brownie", preco:"7,90"}   
+       ]}
+];
+    
     return(
         <>
-            <div class="menu">
-                <Secao />
-                <Secao />
-                <Secao />
-
-                <div class="secao">
-                    <div class="titulo">Agora, sua bebida</div>
-                    <div class="opcoes bebidas">
-                        <div class="opcao bebida-coca" onclick="selecionarBebida('.bebida-coca', 'Coquinha gelada', 6.90)">
-                            <img src="img/coquinha_gelada.png" />
-                            <div class="titulo">Coquinha gelada</div>
-                            <div class="descricao">Lata 350ml</div>
-                            <div class="preco">R$ 6,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="opcao bebida-guarana" onclick="selecionarBebida('.bebida-guarana', 'Guaraná gelado', 4.90)">
-                            <img src="img/coquinha_gelada.png" />
-                            <div class="titulo">Guaraná gelado</div>
-                            <div class="descricao">Lata 350ml</div>
-                            <div class="preco">R$ 4,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="opcao bebida-suco" onclick="selecionarBebida('.bebida-suco', 'Suquinho gelado', 7.90)">
-                            <img src="img/coquinha_gelada.png" />
-                            <div class="titulo">Suquinho gelado</div>
-                            <div class="descricao">500ml</div>
-                            <div class="preco">R$ 7,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="secao">
-                    <div class="titulo">Por fim, sua sobremesa</div>
-                    <div class="opcoes sobremesas">
-                        <div class="opcao sobremesa-pudim" onclick="selecionarSobremesa('.sobremesa-pudim', 'Pudim', 7.90)">
-                            <img src="img/pudim.png" />
-                            <div class="titulo">Pudim</div>
-                            <div class="descricao">Apenas um pudim</div>
-                            <div class="preco">R$ 7,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="opcao sobremesa-mousse" onclick="selecionarSobremesa('.sobremesa-mousse', 'Mousse', 6.90)">
-                            <img src="img/pudim.png" />
-                            <div class="titulo">Mousse</div>
-                            <div class="descricao">Cremoso, gostoso</div>
-                            <div class="preco">R$ 6,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="opcao sobremesa-brownie" onclick="selecionarSobremesa('.sobremesa-brownie', 'Brownie', 4.90)">
-                            <img src="img/pudim.png" />
-                            <div class="titulo">Brownie</div>
-                            <div class="descricao">É um bolinho</div>
-                            <div class="preco">R$ 4,90</div>
-                            <div class="check">
-                            <ion-icon name="checkmark-circle"></ion-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="menu">                
+                {porSecoes.map(porSecao => (<Secao tituloSecao={porSecao.titulo} opcoesSecao={porSecao.itemSession} />))}                                
             </div>
         </>
     );
