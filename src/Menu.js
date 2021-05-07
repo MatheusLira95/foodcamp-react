@@ -20,9 +20,10 @@ export default function Menu(){
        ]}
 ];
     
+    
     return(
         <>
-            <div class="menu">                
+            <div className="menu">                
                 {porSecoes.map(porSecao => (<Secao tituloSecao={porSecao.titulo} opcoesSecao={porSecao.itemSession} />))}                                
             </div>
         </>

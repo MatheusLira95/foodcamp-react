@@ -5,8 +5,8 @@ export default function Secao (props){
 
     return(
         <>
-            <div class="secao">
-                    <Title tituloSecao={props.tituloSecao}/>
+            <div className="secao">
+                    <Title tituloSecao={props.tituloSecao} />
                     <Opcoes opcoesSecao={props.opcoesSecao}/>                    
             </div>
         </>
